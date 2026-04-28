@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutManager AI - SoFIFA Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">FUT<span>MANAGER</span></div>
+        <div class="menu">
+            <button onclick="showSection('search')">Buscar</button>
+            <button onclick="showSection('academy')">Base</button>
+            <button onclick="showSection('tactics')">IA Tática</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="search" class="active">
+            <h2>Jogadores em Destaque</h2>
+            <div id="player-list" class="grid-players"></div>
+        </section>
+
+        <section id="academy">
+            <h2>Categorias de Base</h2>
+            <div class="form-group">
+                <input type="text" id="playerName" placeholder="Nome do Jovem Talento">
+                <input type="number" id="playerGer" placeholder="Geral Inicial (Ex: 60)">
+                <input type="number" id="playerPot" placeholder="Potencial (Ex: 90)">
+                <button class="btn-add" onclick="createYouthPlayer()">Contratar Jogador</button>
+            </div>
+            <div id="youth-list" class="grid-players"></div>
+        </section>
+
+        <section id="tactics">
+            <h2>Consultoria de Tática (IA)</h2>
+            <div class="ia-panel">
+                <label>Qual seu objetivo para o próximo jogo?</label>
+                <select id="tacticStyle">
+                    <option value="press">Pressão Alta (Gegenpressing)</option>
+                    <option value="bus">Estacionar o Ônibus (Defensivo)</option>
+                    <option value="tiki">Tiki-Taka (Posse)</option>
+                    <option value="counter">Contra-Ataque Veloz</option>
+                </select>
+                <button class="btn-ia" onclick="generateIATactic()">Analisar com IA</button>
+                <div id="ai-response" class="response-box"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
